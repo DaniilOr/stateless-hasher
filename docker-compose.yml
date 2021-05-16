@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  ui:
+    build:
+      context: ui
+    image: ui
+    ports:
+      - 8888:80
+    depends_on:
+      - hasher
+  hasher:
+    build:
+      context: hasher
+    image: hasher
+    ports:
+      - 9999:9999
